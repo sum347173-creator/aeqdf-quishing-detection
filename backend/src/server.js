@@ -10,6 +10,9 @@ import scanRoutes from "./routes/scan.js";
 
 const app = express();
 
+
+app.set("trust proxy", 1);
+
 app.use(helmet());
 app.use(cors({ origin: process.env.CORS_ORIGIN || "http://localhost:5173" }));
 app.use(express.json());
