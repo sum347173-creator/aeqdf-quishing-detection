@@ -4,7 +4,7 @@ const ML_URL = process.env.ML_SERVICE_URL || "http://localhost:8000";
 
 export async function getPrediction(features) {
   try {
-    const { data } = await axios.post(`${ML_URL}/predict`, { features }, { timeout: 8000 });
+    const { data } = await axios.post(`${ML_URL}/predict`, { features },{ timeout: 120000 });
     return data;
   } catch (err) {
     if (err.response) {
